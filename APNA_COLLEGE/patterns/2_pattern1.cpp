@@ -212,6 +212,100 @@ void pattern13(int n) {
     }
 }
 
+
+// Palindromic Pattern
+// * * * * 1
+// * * * 2 1 2
+// * * 3 2 1 2 3
+// * 4 3 2 1 2 3 4
+// 5 4 3 2 1 2 3 4 5
+
+void pattern14(int n) {
+    for(int i=1;i<=n;i++)
+    {
+        for(int j=1;j<=n-1;j++) {
+            if(j > n - i) {
+                cout << n - j + 1 << " ";
+            }
+            else {
+                cout << "  ";
+            }
+        }
+
+        for(int j=1;j<=i;j++)
+        {
+            cout << j << " ";
+        }
+        cout << endl;
+    }
+}
+
+// Star Pattern
+void pattern15(int n) {
+    for(int i=1;i<=n;i++)
+    {
+        for(int j=1;j<=n-1;j++) {
+            if(j > n - i) {
+                cout << "* ";
+            }
+            else {
+                cout << "  ";
+            }
+        }
+
+        for(int j=1;j<=i;j++)
+        {
+            cout << "* ";
+        }
+        cout << endl;
+    }
+
+    for(int i=n;i>=1;i--)
+    {
+        for(int j=1;j<=n-1;j++) {
+            if(j > n - i) {
+                cout << "* ";
+            }
+            else {
+                cout << "  ";
+            }
+        }
+
+        for(int j=1;j<=i;j++)
+        {
+            cout << "* ";
+        }
+        cout << endl;
+    }
+}
+
+
+
+// Zig Zag Pattern
+/*
+
+
+    * * 3 * * * 7 * * * 1 * * * * * * * * * * *
+    * 2 * 4 * 6 * 8 * 1 * * * * * * * * * * * *
+    1 * * * 5 * * * 9 * * * * * * * * * * * * * 
+*/ 
+void pattern16(int n) {
+
+    for(int i=1;i<=3;i++) {
+        for(int j=1;j<=n;j++) {
+            if((i+j)%4 == 0 || (i == 2 && j % 4 == 0)) {
+                cout << "* ";
+            }
+            else {
+                cout << "  ";
+            }
+        }
+        cout << endl;
+    }
+
+}
+
+
 int main()
 {
     #ifndef ONLINE_JUDGE
@@ -260,8 +354,19 @@ int main()
             break;
         case 12:
             pattern12(a);
+            break;
         case 13:
             pattern13(a);
+            break;
+        case 14:
+            pattern14(a);
+            break;
+        case 15:
+            pattern15(a);
+            break;
+        case 16:
+            pattern16(a);
+            break;
         default:
             break;
     }
