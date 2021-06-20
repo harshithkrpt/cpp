@@ -305,6 +305,30 @@ void pattern16(int n) {
 
 }
 
+int fact(int n) {
+    if(n == 0) return 1;
+    int factorial = 1;
+    for(int i=2;i<=n;i++) factorial *= i;
+    return factorial;
+}
+
+int nCr(int n,int r) {
+    return fact(n) / (fact(r) * fact(n-r));
+}
+
+
+
+void pattern17(int n) {
+    for(int i=0;i<n;i++)
+    {
+        for(int j=0;j<=i;j++)
+        {
+            cout << nCr(i,j) << " ";
+        }
+        cout << endl;
+    }
+}
+
 
 int main()
 {
@@ -367,6 +391,8 @@ int main()
         case 16:
             pattern16(a);
             break;
+        case 17:
+            pattern17(a);
         default:
             break;
     }
